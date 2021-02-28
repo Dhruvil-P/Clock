@@ -54,6 +54,7 @@ body{
             position: absolute;
             top: 31%;
             left: 42%;
+            display: none;
         }
         .Right{
             width: 120px;
@@ -64,8 +65,9 @@ body{
             position: absolute;
             top: 31%;
             left: 52%;
+            display: none;
         }
-        .Clock{
+        .Clock_D{
             pointer-events: none;
             position: relative;
             height: 250px;
@@ -76,6 +78,7 @@ body{
             border-radius: 20px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(20px);
+            display: none;
             .Container{
                 display: flex;
                 justify-content: center;
@@ -104,6 +107,80 @@ body{
                     font-weight: 700;
                 }
             }
+        }
+        .Clock_A{
+          width: 350px;
+          height: 350px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: url(clock.png);
+          background-size: cover;
+          border-radius: 50%;
+          border: 4px solid #adadad;
+          box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
+          inset 0 -15px 15px rgba(255, 255, 255, 0.05),
+          0 15px 15px rgba(0, 0, 0, 0.3),
+          inset 0 -15px 15px rgba(0, 0, 0, 0.3);
+          backdrop-filter: blur(20px);
+          z-index: 1000;
+          &::before{
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: white;
+            border-radius: 50%;
+            z-index: 10000;
+          }
+          .Hour, .Minute, .Second{
+            position: absolute;
+            .hr{
+              width: 160px;
+              height: 160px;
+              &::before{
+                content: '';
+                position: absolute;
+                width: 8px;
+                height: 80px;
+                background: #ff105e;
+                z-index: 10;
+                border-radius: 6px 6px 0 0;
+              }
+            }
+            .mn{
+              width: 190px;
+              height: 190px;
+              &::before{
+                content: '';
+                position: absolute;
+                width: 4px;
+                height: 90px;
+                z-index: 11;
+                border-radius: 6px 6px 0 0;
+                background: white;
+              }
+            }
+            .sc{
+              width: 230px;
+              height: 230px;
+              &::before{
+                content: '';
+                position: absolute;
+                background: white;
+                border-radius: 6px 6px 0 0;
+                z-index: 12;
+                width: 2px;
+                height: 150px;
+              }
+            }
+            .hr, .mn, .sc{
+              display: flex;
+              justify-content: center;
+              // align-items: center;
+              border-radius: 50%;
+            }
+          }
         }
         .Left_Bar{
             height: 100%;
@@ -206,5 +283,84 @@ body{
               opacity: 0;
             }
           }
+          .Toggle_Bar{
+            position: absolute;
+            top: 20%;
+            left: 20%;
+            display: flex;
+            flex-direction: row;
+            p{
+              color: white;
+              font-size: 3em;
+              font-weight: 700;
+              font-family: 'consolas';
+            }
+            .Ana{
+              margin-left: -50%;
+            }
+            .Digi{
+              margin-left: 10%;
+              visibility: hidden;
+            }
+            .Toggle{
+              width: 100px;
+              height: 50px;
+              background: greenyellow;  
+              border-radius: 30px;
+              box-shadow: 0 15px 25px rgba(255, 255, 255, 0.3);
+              position: relative;
+              left: 5%;
+              bottom: 30%;
+              input{
+                opacity: 0;
+                width: 0;
+                height: 0;
+              }
+              .Slider{
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background: #0a043c;
+                position: absolute;
+                top: 5px;
+                left: 5px;
+                cursor: pointer;
+                transition: 0.5s;
+              }
+            }
+          }
     }
+}
+
+.Left{
+  left: 20px;
+}
+
+.Switch-Toggle{
+  background: #0f3057 !important;
+}
+
+.Slider-Toggle{
+  background: greenyellow !important;
+  position: absolute;
+  left: 50px !important;
+  width: 25px;
+  height: 25px;
+  transition: 0.5s;
+}
+
+.None{
+  display: none !important;
+}
+
+.Block{
+  display: block !important;
+}
+
+.Hidden{
+  visibility: hidden;
+}
+
+.Visible{
+  visibility: visible !important;
 }
