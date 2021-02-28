@@ -10,11 +10,20 @@
 <body>
     <section>
         <div class="Left_Bar"></div>
+        
+        <div class="Toggle_Bar">
+            <p class="Ana">Analog</p>
+            <div class="Toggle">
+                <input type="checkbox" name="" id="">
+                <span class="Slider"></span>
+            </div>
+            <p class="Digi">Digital</p>
+        </div>
 
         <div class="Left"></div>
         <div class="Right"></div>
 
-        <div class="Clock">
+        <div class="Clock_D">
             <div class="Container ">
                 <h2 id="hour">00</h2>
                 <h2 id="dot">:</h2>
@@ -22,6 +31,18 @@
                 <h2 id="dot">:</h2>
                 <h2 id="seconds">00</h2>
                 <span id="ampm">AM</span>
+            </div>
+        </div>
+        
+        <div class="Clock_A">
+            <div class="Hour">
+                <div class="hr" id="hr"></div>
+            </div>
+            <div class="Minute">
+                <div class="mn" id="mn"></div>
+            </div>
+            <div class="Second">
+                <div class="sc" id="sc"></div>
             </div>
         </div>
 
@@ -42,6 +63,10 @@
          </div>
 
     </section>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" 
+    integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" 
+    crossorigin="anonymous"></script>
     <script src="./app.js"></script>
 </body>
 </html>
