@@ -31,3 +31,34 @@ function clock(){
 }
 
 var interval = setInterval(clock, 1000);
+
+// Analog Clock
+
+const deg = 6;
+const hr = document.querySelector("#hr");
+const mn = document.querySelector("#mn");
+const sc = document.querySelector("#sc");
+
+setInterval(() => {
+    let day = new Date();
+    let hh = day.getHours() * 30;
+    let mm = day.getMinutes() * deg;
+    let ss = day.getSeconds() * deg;
+    
+    hr.style.transform = `rotateZ(${(hh) + (mm/12)}deg)`;
+    mn.style.transform = `rotateZ(${mm}deg)`;
+    sc.style.transform = `rotateZ(${ss}deg)`;
+})
+
+// Toggle
+
+$(".Slider").on('click', function(){
+    $(".Slider").toggleClass("Slider-Toggle")
+    $(".Toggle").toggleClass("Switch-Toggle")
+    $(".Ana").toggleClass("Hidden")
+    $(".Digi").toggleClass("Visible")
+    $(".Clock_D").toggleClass("Block")
+    $(".Clock_A").toggleClass("None")
+    $(".Left").toggleClass("Block")
+    $(".Right").toggleClass("Block")
+})
